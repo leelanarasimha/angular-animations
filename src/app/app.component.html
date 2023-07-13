@@ -1,12 +1,3 @@
-<div>
-  <h1>Leela web dev</h1>
-  <button class="btn btn-success">Add</button>
-</div>
-
-<app-course
-  *ngFor="let course of courses"
-  [course]="course"
-  [ngClass]="{ active: course.isActive }"
-  (click)="course.isActive = !course.isActive"
->
+<app-course>
+  <h2>Angular Animations</h2>
 </app-course>

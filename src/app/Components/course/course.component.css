@@ -1,16 +1,8 @@
-:host {
-  display: inline-block;
-  padding: 10px;
-  margin: 30px;
-  border: 2px solid black;
-  width: 200px;
-  text-align: center;
+.blue {
+  background-color: blue;
 }
 
-:host(.active) {
-  border-color: red;
-}
-
-h1 {
-  color: green;
+h2 {
+  color: white;
+  margin-left: 50px;
 }
