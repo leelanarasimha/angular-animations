@@ -1,6 +1,6 @@
-:host {
-  display: block;
+:host-context(.content-1) {
+  color: blue;
+  background-color: red;
   border: 1px solid black;
-  padding: 10px;
-  margin: 10px;
+  display: block;
 }
