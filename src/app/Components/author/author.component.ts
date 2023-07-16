@@ -6,10 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./author.component.css'],
 })
 export class AuthorComponent {
-  isActive: String = 'is-active';
+  isActive: boolean = true;
 
   getActiveClasses() {
     return ['isActive'];
+  }
+
+  getColor() {
+    return this.isActive ? 'green' : 'red';
   }
 }
 
