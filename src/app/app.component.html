@@ -1,9 +1,26 @@
-<div class="content-1">
-  <div>
-    <app-course class="is-active"></app-course>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLink="/"
+            >Courses</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/users"
+            >Users</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
 
-<div class="content-2">
-  <app-course></app-course>
+  <div class="row">
+    <div class="col-xs-12"><router-outlet></router-outlet></div>
+  </div>
 </div>
