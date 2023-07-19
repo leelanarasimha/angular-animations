@@ -1,4 +1,11 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  Input,
+  ViewChild,
+  ElementRef,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import { Course } from '../courses/course.model';
 
 @Component({
@@ -8,4 +15,11 @@ import { Course } from '../courses/course.model';
 })
 export class CourseComponent {
   @Input() course!: Course;
+  @ViewChild('statusRef') statusRef!: ElementRef<HTMLSelectElement>;
+  @Output() statusUpdated = new EventEmitter<string>();
+
+  onStatusUpdate() {
+    const selectedValue = this.statusRef.nativeElement.value;
+    this.statusUpdated.emit(selectedValue);
+  }
 }

@@ -1,4 +1,20 @@
-<h3>{{ course.name }}</h3>
+<h3>
+  {{ course.name }}
+
+  <span class="label label-default">{{ course.status }}</span>
+</h3>
 <hr />
 
 <p>{{ course.description }}</p>
+
+<div>
+  <select class="form-control" #statusRef>
+    <option value="active">Active</option>
+    <option value="inactive">InActive</option>
+    <option value="draft">Draft</option>
+  </select>
+
+  <button class="btn btn-primary" (click)="onStatusUpdate()">
+    Update Status
+  </button>
+</div>

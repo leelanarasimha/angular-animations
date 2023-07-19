@@ -16,4 +16,8 @@ export class CoursesComponent {
       this.courses = courses;
     });
   }
+
+  onStatusUpdate(newValue: string, index: number) {
+    this.courses[index].status = newValue;
+  }
 }
