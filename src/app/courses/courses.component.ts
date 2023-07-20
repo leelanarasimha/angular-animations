@@ -20,4 +20,7 @@ export class CoursesComponent {
   onStatusUpdate(newValue: string, index: number) {
     this.courses[index].status = newValue;
   }
+  onCourseDelete(index: number) {
+    this.courses.splice(index, 1);
+  }
 }

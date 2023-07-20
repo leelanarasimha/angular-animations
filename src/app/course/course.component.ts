@@ -17,9 +17,14 @@ export class CourseComponent {
   @Input() course!: Course;
   @ViewChild('statusRef') statusRef!: ElementRef<HTMLSelectElement>;
   @Output() statusUpdated = new EventEmitter<string>();
+  @Output() courseDeleted = new EventEmitter<void>();
 
   onStatusUpdate() {
     const selectedValue = this.statusRef.nativeElement.value;
     this.statusUpdated.emit(selectedValue);
+  }
+
+  onCourseDelete() {
+    this.courseDeleted.emit();
   }
 }
