@@ -9,6 +9,7 @@ import { Course } from './course.model';
 })
 export class CoursesComponent {
   courses: Course[] = [];
+  selectedCourseIndex!: number;
   constructor(private coursesService: CoursesService) {}
 
   ngOnInit() {
@@ -22,5 +23,9 @@ export class CoursesComponent {
   }
   onCourseDelete(index: number) {
     this.courses.splice(index, 1);
+  }
+
+  onCourseSelected(index: number) {
+    this.selectedCourseIndex = index;
   }
 }
