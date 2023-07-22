@@ -9,12 +9,14 @@ import { Course } from './course.model';
 })
 export class CoursesComponent {
   courses: Course[] = [];
+  coursesLoaded = false;
   selectedCourseIndex!: number;
   constructor(private coursesService: CoursesService) {}
 
   ngOnInit() {
     this.coursesService.getCourses().subscribe((courses) => {
       this.courses = courses;
+      this.coursesLoaded = true;
     });
   }
 
