@@ -1,4 +1,4 @@
-div {
+#div1 {
   width: 100px;
   height: 100px;
   background-color: red;
@@ -8,4 +8,37 @@ div {
 
 .active {
   width: 300px;
+}
+
+#div2 {
+  width: 100px;
+  height: 75px;
+  background-color: blue;
+  margin: 40px;
+}
+
+.move {
+  animation: mymove 1s forwards;
+}
+
+@keyframes mymove {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+
+  50% {
+    opacity: 0.75;
+    transform: translateX(50px) scale(0.75);
+  }
+
+  75% {
+    opacity: 0.5;
+    transform: translateX(100px) scale(0.5);
+  }
+
+  100% {
+    opacity: 0.25;
+    transform: translateX(150px) scale(0.25);
+  }
 }

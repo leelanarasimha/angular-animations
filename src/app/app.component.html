@@ -1,5 +1,14 @@
 <div
+  id="div1"
   [ngClass]="{ active: divClicked }"
   [ngStyle]="{ backgroundColor: divClicked ? 'blue' : 'red' }"
   (click)="onColorChange()"
+></div>
+
+<hr />
+
+<div
+  id="div2"
+  [ngClass]="{ move: moveClicked }"
+  (click)="moveClicked = true"
 ></div>
