@@ -1,3 +1,6 @@
+.inactive {
+  border: 1px solid #ccc;
+}
 .selected {
   border: 2px solid blue;
 }

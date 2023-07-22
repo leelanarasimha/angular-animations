@@ -10,3 +10,11 @@
   width: 50%;
   display: inline-block;
 }
+
+:host(.selected) {
+  padding: 19px;
+}
+
+:host(.inactive) {
+  color: #ccc;
+}

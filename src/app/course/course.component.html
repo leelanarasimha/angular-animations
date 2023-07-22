@@ -1,7 +1,9 @@
 <h3>
   {{ course.name }}
 
-  <span class="label label-default">{{ course.status }}</span>
+  <span class="badge" [ngClass]="getCourseStatusClass()">{{
+    course.status
+  }}</span>
 </h3>
 <hr />
 

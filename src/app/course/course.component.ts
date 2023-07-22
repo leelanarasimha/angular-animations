@@ -27,4 +27,12 @@ export class CourseComponent {
   onCourseDelete() {
     this.courseDeleted.emit();
   }
+
+  getCourseStatusClass() {
+    return {
+      'bg-success': this.course.status === 'active',
+      'bg-secondary': this.course.status === 'inactive',
+      'bg-danger': this.course.status === 'draft',
+    };
+  }
 }
