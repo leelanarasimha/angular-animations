@@ -8,6 +8,7 @@ import { UsersComponent } from './users/users.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CourseComponent } from './course/course.component';
 import { AnimationComponent } from './animation/animation.component';
+import { OpenCloseComponent } from './open-close/open-close.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AnimationComponent } from './animation/animation.component';
     UsersComponent,
     CourseComponent,
     AnimationComponent,
+    OpenCloseComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
