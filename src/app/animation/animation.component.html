@@ -7,3 +7,14 @@
 <p class="my-3" (click)="onParagraphClick()" [@clickedState]="paragraphState">
   This is some text
 </p>
+
+<hr />
+
+<input type="number" (input)="onNumberSelected($event)" />
+<div class="my-3">
+  <span
+    *ngFor="let i of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+    [@numberState]="selectedNumber === i ? 'selected' : 'unselected'"
+    >{{ i }}</span
+  >
+</div>

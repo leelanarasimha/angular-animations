@@ -43,11 +43,36 @@ import {
       transition('mousedown <=> clicked', animate(300)),
       transition('default <=> mousedown', animate(300)),
     ]),
+    trigger('numberState', [
+      state(
+        'unselected',
+        style({
+          border: '1px solid black',
+          padding: '5px',
+        })
+      ),
+      state(
+        'selected',
+        style({
+          border: '2px solid blue',
+          padding: '4px',
+          backgroundColor: 'lightblue',
+        })
+      ),
+      transition('unselected => selected', [
+        style({
+          border: '2px solid black',
+          padding: '4px',
+        }),
+        animate(300),
+      ]),
+    ]),
   ],
 })
 export class AnimationComponent {
   clickInfo = 'default';
   paragraphState = 'default';
+  selectedNumber!: number;
 
   ngOnInit() {}
 
@@ -63,5 +88,9 @@ export class AnimationComponent {
     setTimeout(() => {
       this.paragraphState = 'mousedown';
     }, 3000);
+  }
+
+  onNumberSelected(event: Event) {
+    this.selectedNumber = +(<HTMLInputElement>event.target).value;
   }
 }
