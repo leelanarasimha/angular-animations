@@ -22,6 +22,15 @@ import {
         })
       ),
       state(
+        'mousedown',
+        style({
+          backgroundColor: 'red',
+          border: '1px solid black',
+          width: '100px',
+          height: '100px',
+        })
+      ),
+      state(
         'clicked',
         style({
           width: '100px',
@@ -30,15 +39,29 @@ import {
         })
       ),
       transition('default => clicked', animate('1s 200ms ease-in')),
+      transition('clicked => default', animate(300)),
+      transition('mousedown <=> clicked', animate(300)),
+      transition('default <=> mousedown', animate(300)),
     ]),
   ],
 })
 export class AnimationComponent {
   clickInfo = 'default';
+  paragraphState = 'default';
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onClickSample() {
+    this.clickInfo = 'default';
     setTimeout(() => {
       this.clickInfo = 'clicked';
+    }, 3000);
+  }
+
+  onParagraphClick() {
+    this.paragraphState = 'default';
+    setTimeout(() => {
+      this.paragraphState = 'mousedown';
     }, 3000);
   }
 }
