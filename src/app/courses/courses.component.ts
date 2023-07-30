@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CoursesService } from './courses.service';
 import { Course } from './course.model';
+import { triggerState } from './animations';
 
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css'],
+  animations: [triggerState],
 })
 export class CoursesComponent {
   courses: Course[] = [];
