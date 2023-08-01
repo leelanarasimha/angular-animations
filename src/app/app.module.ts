@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CourseComponent } from './course/course.component';
 import { AnimationComponent } from './animation/animation.component';
 import { OpenCloseComponent } from './open-close/open-close.component';
+import { VoidAnimationComponent } from './void-animation/void-animation.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { OpenCloseComponent } from './open-close/open-close.component';
     CourseComponent,
     AnimationComponent,
     OpenCloseComponent,
+    VoidAnimationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
