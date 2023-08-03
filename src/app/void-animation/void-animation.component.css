@@ -4,3 +4,9 @@ p {
   background-color: lightblue;
   border: 1px solid black;
 }
+
+.element {
+  margin: 10px 0px;
+  background-color: lightblue;
+  border: 1px solid black;
+}

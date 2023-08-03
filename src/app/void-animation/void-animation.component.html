@@ -11,3 +11,11 @@
 >
   Shrink Me
 </p>
+
+<hr />
+
+<button (click)="onAddElement()">Add Element</button>
+
+<div @listTrigger class="element" *ngFor="let item of listData">
+  {{ item }}
+</div>
