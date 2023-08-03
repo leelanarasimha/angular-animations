@@ -29,8 +29,8 @@ export const ConditionAnimation = trigger('conditionalTrigger', [
 
 export const shrinkAnimation = trigger('shrinkAnimation', [
   transition('* => *', [
-    animate(400, style({ width: 0 })),
-    animate(400, style({ width: '*' })),
+    animate('4000ms cubic-bezier(.2,1.5,.83,.67)', style({ width: 0 })),
+    animate('4000ms cubic-bezier(.2,1.5,.83,.67)', style({ width: '*' })),
   ]),
 ]);
 
