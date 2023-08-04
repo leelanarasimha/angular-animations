@@ -1,6 +1,7 @@
 import {
   animate,
   group,
+  keyframes,
   state,
   style,
   transition,
@@ -49,10 +50,21 @@ export const listAnimation = trigger('listTrigger', [
         })
       ),
       animate(
-        2000,
-        style({
-          backgroundColor: 'red',
-        })
+        '4000ms ease-in',
+        keyframes([
+          style({
+            backgroundColor: 'red',
+            offset: 0,
+          }),
+          style({
+            backgroundColor: 'yellow',
+            offset: 0.9,
+          }),
+          style({
+            backgroundColor: 'green',
+            offset: 1,
+          }),
+        ])
       ),
     ]),
 
