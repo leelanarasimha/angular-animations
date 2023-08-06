@@ -13,6 +13,7 @@ export class CoursesComponent {
   courses: Course[] = [];
   coursesLoaded = false;
   selectedCourseIndex!: number;
+  createNewCourse = false;
   constructor(private coursesService: CoursesService) {}
 
   ngOnInit() {
@@ -31,5 +32,9 @@ export class CoursesComponent {
 
   onCourseSelected(index: number) {
     this.selectedCourseIndex = index;
+  }
+
+  onCourseCreate() {
+    this.createNewCourse = true;
   }
 }

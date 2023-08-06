@@ -3,6 +3,18 @@
     <h3>My Courses</h3>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-info" (click)="onCourseCreate()">Add Course</button>
+  </div>
+</div>
+
+<div class="row" *ngIf="createNewCourse">
+  <div class="col-md-12">
+    <app-new-course></app-new-course>
+  </div>
+</div>
 <div class="row">
   <div class="col-xs-12">
     <div class="loading-bar" *ngIf="!coursesLoaded">
