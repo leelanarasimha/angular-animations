@@ -37,4 +37,13 @@ export class CoursesComponent {
   onCourseCreate() {
     this.createNewCourse = true;
   }
+
+  courseCreated(event: Course) {
+    this.courses.unshift(event);
+    this.createNewCourse = false;
+  }
+
+  courseCancel() {
+    this.createNewCourse = false;
+  }
 }

@@ -12,7 +12,10 @@
 
 <div class="row" *ngIf="createNewCourse">
   <div class="col-md-12">
-    <app-new-course></app-new-course>
+    <app-new-course
+      (courseCreated)="courseCreated($event)"
+      (courseCanceled)="courseCancel()"
+    ></app-new-course>
   </div>
 </div>
 <div class="row">
