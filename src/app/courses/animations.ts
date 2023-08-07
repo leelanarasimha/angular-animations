@@ -1,5 +1,6 @@
 import {
   animate,
+  keyframes,
   state,
   style,
   transition,
@@ -41,26 +42,46 @@ export const triggerState = trigger('selectedTrigger', [
 
 export const courseAddState = trigger('courseAddTrigger', [
   transition(':enter', [
-    style({
-      opacity: 0,
-      transform: 'translateX(-100%)',
-    }),
     animate(
       '500ms ease-out',
-      style({
-        opacity: 1,
-        transform: 'translateX(0)',
-      })
+      keyframes([
+        style({
+          opacity: 0,
+          transform: 'translateX(-100%)',
+          offset: 0,
+        }),
+        style({
+          opacity: 1,
+          transform: 'translateX(15%)',
+          offset: 0.4,
+        }),
+        style({
+          transform: 'translateX(0%)',
+          offset: 1,
+        }),
+      ])
     ),
   ]),
 
-  transition(':leave', [
+  transition(
+    ':leave',
     animate(
       '500ms ease-in',
-      style({
-        opacity: 0,
-        transform: 'translateX(100%)',
-      })
-    ),
-  ]),
+      keyframes([
+        style({
+          transform: 'translateX(0%)',
+          offset: 0,
+        }),
+        style({
+          transform: 'translateX(-15%)',
+          offset: 0.4,
+        }),
+        style({
+          opacity: 0,
+          transform: 'translateX(100%)',
+          offset: 1,
+        }),
+      ])
+    )
+  ),
 ]);
