@@ -10,9 +10,11 @@
   </div>
 </div>
 
-<div class="row" *ngIf="createNewCourse">
-  <div class="col-md-12">
+<div class="row">
+  <div class="col-md-12 overflow-hidden">
     <app-new-course
+      *ngIf="createNewCourse"
+      @newCourseTrigger
       (courseCreated)="courseCreated($event)"
       (courseCanceled)="courseCancel()"
     ></app-new-course>

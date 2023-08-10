@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { CoursesService } from './courses.service';
 import { Course } from './course.model';
-import { courseAddState, triggerState } from './animations';
+import { courseAddState, newCourseState, triggerState } from './animations';
 import { AnimationEvent } from '@angular/animations';
 
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css'],
-  animations: [triggerState, courseAddState],
+  animations: [triggerState, courseAddState, newCourseState],
 })
 export class CoursesComponent {
   courses: Course[] = [];
