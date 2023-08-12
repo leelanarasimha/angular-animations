@@ -12,6 +12,7 @@ import { AnimationComponent } from './animation/animation.component';
 import { OpenCloseComponent } from './open-close/open-close.component';
 import { VoidAnimationComponent } from './void-animation/void-animation.component';
 import { NewCourseComponent } from './new-course/new-course.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NewCourseComponent } from './new-course/new-course.component';
     OpenCloseComponent,
     VoidAnimationComponent,
     NewCourseComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

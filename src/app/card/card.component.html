@@ -1,0 +1,22 @@
+<div class="row my-5">
+  <div class="col-md-8 offset-md-2">
+    <div>
+      <button class="btn btn-primary" (click)="showCard = !showCard">
+        Show Card
+      </button>
+    </div>
+
+    <hr />
+
+    <div class="card" @cardTrigger *ngIf="showCard">
+      <div class="card-header">This is card Header</div>
+      <div class="card-body">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+        dolores, id vitae quo quam odit velit sequi ut est omnis repudiandae
+        iste, harum voluptates maiores iure in vero, soluta aliquid.
+      </div>
+
+      <div class="card-footer">This is the footer</div>
+    </div>
+  </div>
+</div>
