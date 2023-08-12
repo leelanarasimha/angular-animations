@@ -3,7 +3,10 @@ import { CoursesService } from './courses.service';
 import { Course } from './course.model';
 import { courseAddState, newCourseState, triggerState } from './animations';
 import { AnimationEvent } from '@angular/animations';
-import { routeAnimationState } from '../shared/route-animations';
+import {
+  routeAnimationState,
+  routeSlideAnimationState,
+} from '../shared/route-animations';
 
 @Component({
   selector: 'app-courses',
@@ -14,6 +17,7 @@ import { routeAnimationState } from '../shared/route-animations';
     courseAddState,
     newCourseState,
     routeAnimationState,
+    routeSlideAnimationState,
   ],
 })
 export class CoursesComponent {
@@ -22,7 +26,7 @@ export class CoursesComponent {
   selectedCourseIndex!: number;
   displayedCourses: Course[] = [];
   createNewCourse = false;
-  @HostBinding('@routeAnimationTrigger') routeANimation = true;
+  @HostBinding('@routeSlideAnimationTrigger') routeAnimation = true;
   constructor(private coursesService: CoursesService) {}
 
   ngOnInit() {
