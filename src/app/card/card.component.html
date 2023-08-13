@@ -8,12 +8,22 @@
 
     <hr />
 
-    <div class="card" @cardTrigger *ngIf="showCard">
+    <div class="card" [@cardTrigger]="showParagraph" *ngIf="showCard">
       <div class="card-header">This is card Header</div>
       <div class="card-body">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
         dolores, id vitae quo quam odit velit sequi ut est omnis repudiandae
         iste, harum voluptates maiores iure in vero, soluta aliquid.
+
+        <p *ngIf="showParagraph">This is the paragraph</p>
+        <div>
+          <button
+            class="btn btn-primary"
+            (click)="showParagraph = !showParagraph"
+          >
+            Toggle Paragraph
+          </button>
+        </div>
       </div>
 
       <div class="card-footer">This is the footer</div>
