@@ -1,6 +1,7 @@
 import {
   animate,
   group,
+  query,
   state,
   style,
   transition,
@@ -56,5 +57,22 @@ export const buttonStateTrigger = trigger('buttonState', [
     ]),
 
     animate(300, style({ transform: 'scale(1)' })),
+  ]),
+]);
+
+export const courseFormState = trigger('courseFormTrigger', [
+  transition('* => *', [
+    query(
+      '.ng-invalid:focus',
+      [
+        animate(
+          300,
+          style({
+            backgroundColor: 'red',
+          })
+        ),
+      ],
+      { optional: true }
+    ),
   ]),
 ]);

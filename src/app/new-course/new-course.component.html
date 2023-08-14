@@ -1,5 +1,9 @@
 <div>
-  <form [formGroup]="courseForm" (ngSubmit)="onCourseCreate()">
+  <form
+    [formGroup]="courseForm"
+    (ngSubmit)="onCourseCreate()"
+    [@courseFormTrigger]="courseForm.value"
+  >
     <div class="my-2">
       <label for="">Name</label>
       <input type="text" class="form-control" formControlName="name" />

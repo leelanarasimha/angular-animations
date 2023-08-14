@@ -1,13 +1,13 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Course } from '../courses/course.model';
-import { buttonStateTrigger } from './animations';
+import { buttonStateTrigger, courseFormState } from './animations';
 
 @Component({
   selector: 'app-new-course',
   templateUrl: './new-course.component.html',
   styleUrls: ['./new-course.component.css'],
-  animations: [buttonStateTrigger],
+  animations: [buttonStateTrigger, courseFormState],
 })
 export class NewCourseComponent {
   @Output() courseCreated = new EventEmitter<Course>();
