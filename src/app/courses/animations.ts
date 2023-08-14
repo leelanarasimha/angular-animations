@@ -1,6 +1,8 @@
 import {
   animate,
   keyframes,
+  query,
+  stagger,
   state,
   style,
   transition,
@@ -41,28 +43,6 @@ export const triggerState = trigger('selectedTrigger', [
 ]);
 
 export const courseAddState = trigger('courseAddTrigger', [
-  transition(':enter', [
-    animate(
-      '500ms ease-out',
-      keyframes([
-        style({
-          opacity: 0,
-          transform: 'translateX(-100%)',
-          offset: 0,
-        }),
-        style({
-          opacity: 1,
-          transform: 'translateX(15%)',
-          offset: 0.4,
-        }),
-        style({
-          transform: 'translateX(0%)',
-          offset: 1,
-        }),
-      ])
-    ),
-  ]),
-
   transition(
     ':leave',
     animate(
@@ -123,5 +103,36 @@ export const newCourseState = trigger('newCourseTrigger', [
       transform: 'translateY(0%)',
     }),
     animate('500ms ease-out', style({ transform: 'translateY(-100%)' })),
+  ]),
+]);
+
+export const listStateTrigger = trigger('listStateTrigger', [
+  transition('* => *', [
+    query(
+      ':enter',
+      [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100%)',
+        }),
+        stagger(500, [
+          animate(
+            '500ms ease-out',
+            keyframes([
+              style({
+                opacity: 1,
+                transform: 'translateX(15%)',
+                offset: 0.4,
+              }),
+              style({
+                transform: 'translateX(0%)',
+                offset: 1,
+              }),
+            ])
+          ),
+        ]),
+      ],
+      { optional: true }
+    ),
   ]),
 ]);

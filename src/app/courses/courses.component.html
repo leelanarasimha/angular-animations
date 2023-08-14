@@ -25,18 +25,19 @@
     <div class="loading-bar" *ngIf="!coursesLoaded">
       <div class="loading-bar-element"></div>
     </div>
-    <app-course
-      *ngFor="let course of displayedCourses; let i = index"
-      [course]="course"
-      [@courseAddTrigger]="createNewCourse ? 'slideDown' : 'slideUp'"
-      (@courseAddTrigger.done)="onCourseAddDone($event, i)"
-      [@selectedTrigger]="selectedCourseIndex === i ? 'selected' : 'default'"
-      [ngClass]="{
-        inactive: course.status === 'inactive'
-      }"
-      (statusUpdated)="onStatusUpdate($event, i)"
-      (courseDeleted)="onCourseDelete(i)"
-      (click)="onCourseSelected(i)"
-    ></app-course>
+    <div [@listStateTrigger]="courses.length">
+      <app-course
+        *ngFor="let course of courses; let i = index"
+        [course]="course"
+        [@courseAddTrigger]="createNewCourse ? 'slideDown' : 'slideUp'"
+        [@selectedTrigger]="selectedCourseIndex === i ? 'selected' : 'default'"
+        [ngClass]="{
+          inactive: course.status === 'inactive'
+        }"
+        (statusUpdated)="onStatusUpdate($event, i)"
+        (courseDeleted)="onCourseDelete(i)"
+        (click)="onCourseSelected(i)"
+      ></app-course>
+    </div>
   </div>
 </div>
