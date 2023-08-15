@@ -21,7 +21,7 @@ import {
     triggerState,
     courseAddState,
     newCourseState,
-    routeAnimationState,
+    //routeAnimationState,
     routeSlideAnimationState,
     listStateTrigger,
   ],
