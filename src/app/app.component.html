@@ -23,4 +23,16 @@
   <div class="row overflow-hidden">
     <div class="col-xs-12"><router-outlet></router-outlet></div>
   </div>
+
+  <div class="row my-4">
+    <div class="col-md-12">
+      <div class="box" #boxElem></div>
+
+      <div class="my-2">
+        <button class="btn btn-primary" (click)="animate(boxElem)">
+          Animate
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
